@@ -1,0 +1,29 @@
+
+
+```{r setup, include=FALSE,}
+knitr::opts_chunk$set(echo = FALSE)
+library(leaflet)
+```
+
+##**Melbourne Touristic Spots**
+* **Create date:** Aug 18, 2019
+* **Population:** 4.936 million (per 2018)
+* **Rank:** World's most liveable city (2010 - 2017)
+
+```{r, echo = FALSE, out.width=800, out.height= 600}
+df <- data.frame(
+                 latitude = c(-37.7983,-37.8180,-37.8226,-37.8076, -37.8235),
+                 longitude = c(144.9610,144.9691,144.9689,144.9568,144.9581))
+
+dflink <- c(
+  "<a href='https://www.unimelb.edu.au/'>University of Melbourne</a>",
+  "<a href='http://fedsquare.com/'>Federation Square</a>",
+  "<a href='https://www.ngv.vic.gov.au/'>National Gallery of Victoria</a>",
+  "<a href='https://qvm.com.au/'>Queen Victoria Market</a>",
+  "<a href='  https://www.rbg.vic.gov.au/'>Royal Botanic Garden</a>"
+)
+
+df %>% leaflet() %>% addTiles() %>% addMarkers(popup = dflink)
+
+```
+
