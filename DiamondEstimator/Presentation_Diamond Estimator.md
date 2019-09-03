@@ -21,18 +21,18 @@ Linear regression model using the diamonds dataset available from R.
 
      lm(price~carat+Length+Ideal+Premium+Good+V_Good+Fair,data=df)
 <small>
-`Residuals:
-     Min       1Q   Median       3Q      Max 
--22487.6   -637.9    -53.6    360.7  12988.0`
-`            Estimate Std. Error t value Pr(>|t|)   
-(Intercept)   204.87     106.69    1.92   0.0548 . 
-carat       10325.35      61.12  168.94   <2e-16 *** 
-Length      -1064.18      25.82  -41.22   <2e-16 *** 
-Ideal        1856.57      38.76   47.90   <2e-16 *** 
-Premium      1526.95      39.31   38.84   <2e-16 *** 
-Good         1169.40      42.85   27.29   <2e-16 *** 
-V_Good       1559.87      39.64   39.35   <2e-16 *** 
-Fair              NA         NA      NA       NA    `
+`Residuals:<br>
+     Min       1Q   Median       3Q      Max <br>
+-22487.6   -637.9    -53.6    360.7  12988.0`<br>
+`            Estimate Std. Error t value Pr(>|t|) <br>  
+(Intercept)   204.87     106.69    1.92   0.0548 . <br>
+carat       10325.35      61.12  168.94   <2e-16 *** <br>
+Length      -1064.18      25.82  -41.22   <2e-16 *** <br>
+Ideal        1856.57      38.76   47.90   <2e-16 *** <br>
+Premium      1526.95      39.31   38.84   <2e-16 *** <br>
+Good         1169.40      42.85   27.29   <2e-16 *** <br>
+V_Good       1559.87      39.64   39.35   <2e-16 *** <br>
+Fair              NA         NA      NA       NA    `<br>
 `---`<br>
 `Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1`<br>
 <br>
