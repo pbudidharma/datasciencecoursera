@@ -41,35 +41,15 @@ Fair              NA         NA      NA       NA    `<br>
 `F-statistic: 5.561e+04 on 6 and 53933 DF,  p-value: < 2.2e-16`
 </small>
 
-Server Calculation
+How It Works
 ========================================================
-
-` 
-shinyServer(function(input, output){
-
-    data2 <- eventReactive(input$submit, {
-      
-      car_input <- as.numeric(as.character(input$carat))
-      cut_input <- input$cut
-      len_input <- input$length
-      i_input <- ifelse(cut_input == "i",1,0)
-      p_input <- ifelse(cut_input == "p",1,0)
-      g_input <- ifelse(cut_input == "g",1,0)
-      v_input <- ifelse(cut_input == "vg",1,0)
-      f_input <- ifelse(cut_input == "f",1,0)
-    
-      fit <- lm(price~carat+Length+Ideal+Premium+Good+V_Good+Fair,data=df)
-      data4=data.frame(carat=car_input,Fair = f_input, Ideal = i_input, Premium = p_input, Good = g_input, V_Good = v_input,Length=len_input)
-     temp_pred <- predict(fit,data4,interval="prediction",level=0.95)
-     pred <- temp_pred[1]})
-     
-    output$text1 <- renderText({data2()})
-    output$print1 <- renderPlot({  
-      barplot(coefficients(data())[2:7], main="Regression Coefficients")})
-})
-`
-
-Output
-========================================================
+Once the user clicked the submit button, the input data is passed to the server and fitted to the regression model.
+The predicted result, then, being presented to the main panel UI.
 
 ![result](DiamondEstimator_Shiny.jpg)
+
+Future Development
+========================================================
+Incorporate more characteristics into the model
+Build a more detail dashboard
+
